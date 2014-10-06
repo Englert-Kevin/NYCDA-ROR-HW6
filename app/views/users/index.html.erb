@@ -1,0 +1,13 @@
+<h2>Welcome</h2>
+<%= flash[:notice] if flash[:notice] %>
+<% if session[:user_id] %>
+	<h3>Hi, <%= @user.username %></h3>
+	<%= link_to 'Your Profile', user_path(@user.id) %>
+	<br>
+	<br>
+	<%= link_to 'View Topics', topics_path %>
+	<br>
+	<br>
+	<%= link_to 'Create A Topic', new_user_topic_path(@user.id) %>
+
+<% end %>

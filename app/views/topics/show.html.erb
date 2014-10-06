@@ -1,0 +1,19 @@
+<h2>Show Topic</h2>
+
+<%= @topic.title %>
+<%= @topic.description %>
+<br>
+
+<%= link_to 'Make a reply', new_topic_reply_path(@topic.id) %>
+
+<br>
+
+<% @replies.each do |r| %>
+	<p><%= r.body %> -- <%= time_ago_in_words(r.created_at) %></p>
+	<% if r.user_id == session[:user_id] %>
+		<p><%= link_to('Delete Reply', topic_reply_path(r.topic_id, r.id), method: :delete) %></p>
+	<% else %>
+		<p>Delete Post</p>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,12 @@
+<h2>Reply</h2>
+	<%= form_for [@topic, @reply] do |r| %>
+ 		<fieldset>
+			<div>
+				<%= r.label :body %>
+				<%= r.text_field :body %>
+			</div>
+			<div>
+				<%= r.submit %>
+			</div>
+		</fieldset>
+	<% end %>

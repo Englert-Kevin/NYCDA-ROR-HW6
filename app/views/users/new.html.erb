@@ -1,0 +1,21 @@
+<h2>Sign Up</h2>
+
+<%= form_for @user do |u| %>
+	<fieldset>
+		<div>
+			<%= u.label :username %>
+			<%= u.text_field :username %>
+		</div>
+		<div>
+			<%= u.label :password %>
+			<%= u.text_field :password %>
+		</div>
+		<div>
+			<%= u.label :email %>
+			<%= u.text_field :email %>
+		</div>
+		<div>
+			<%= u.submit %>
+		</div>
+	</fieldset>
+<% end %>

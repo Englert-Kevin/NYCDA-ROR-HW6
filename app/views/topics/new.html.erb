@@ -1,0 +1,16 @@
+<h2>Create Topic</h2>
+	<%= form_for [@user, @topic] do |t| %>
+ 		<fieldset>
+			<div>
+				<%= t.label :title %>
+				<%= t.text_field :title %>
+			</div>
+			<div>
+				<%= t.label :description %>
+				<%= t.text_field :description %>
+			</div>
+			<div>
+				<%= t.submit %>
+			</div>
+		</fieldset>
+	<% end %>
